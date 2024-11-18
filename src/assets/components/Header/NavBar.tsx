@@ -6,27 +6,26 @@ function NavBar() {
   return (
     <Container
       maxWidth={false}
-      sx={{ padding: 0, width: "100%", display: "flex", alignItems: "center" }}
+      sx={{ display: "flex", alignItems: "center", width:'100%' }}
     >
       <Box>
         <img
-          src="public/Icons/icons8-computador-50.png"
+          src="public\Icons\Cubo-Magico.gif"
           alt="Logo"
-          style={{ width: "50px", height: "50px" }}
+          style={{ height: "100px" }}
         />
       </Box>
+
       <Box>
         <Typography
           sx={{
-            fontFamily: "sans-serif",
-            fontWeight: 'bolder',
-            fontSize: "2rem",
+            fontFamily: "arial",
+            fontWeight: "bold",
+            fontSize: "1.5rem",
             color: "#ffffff",
-            marginLeft: "2rem",
-            
           }}
         >
-          Henrique 
+          Henrique Bueno
         </Typography>
       </Box>
     </Container>
