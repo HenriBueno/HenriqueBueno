@@ -30,7 +30,7 @@ export default function BasicButtons({ color, text }: ButtonDefaultProps) {
           
         }}
       >
-        {text || "Sobre mim"}
+        {text}
       </Button>
     </Stack>
   );

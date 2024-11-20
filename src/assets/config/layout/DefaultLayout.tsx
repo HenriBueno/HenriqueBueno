@@ -1,9 +1,9 @@
-import NavBar from "../../components/Header/NavBar";
+import NavBar from "../../components/NavBar/NavBar";
 
 function DefaultLayout() {
   return (
     <>
-      <NavBar />
+      <NavBar text="Henrique Bueno"/>
  
     </>
   );

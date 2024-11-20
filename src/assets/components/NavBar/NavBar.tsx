@@ -2,7 +2,11 @@ import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 
-function NavBar() {
+interface NavBarProps{
+  text: string
+}
+
+function NavBar({text}: NavBarProps) {
   return (
     <Container
       maxWidth={false}
@@ -10,7 +14,7 @@ function NavBar() {
     >
       <Box>
         <img
-          src="public\Icons\Cubo-Magico.gif"
+          src="src/assets/Icons/Cubo-Magico.gif"
           alt="Logo"
           style={{ height: "100px" }}
         />
@@ -25,7 +29,7 @@ function NavBar() {
             color: "#ffffff",
           }}
         >
-          Henrique Bueno
+          {text}
         </Typography>
       </Box>
     </Container>
