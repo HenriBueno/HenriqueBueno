@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CarrosselStyled = styled.div`
+const CarrosselStyled = styled.div<{ scale?: string }>`
   .embla {
     overflow: hidden;
     width: 100%; 
@@ -24,6 +24,7 @@ const CarrosselStyled = styled.div`
   svg {
     max-width: 100%;
     height: auto;
+    scale: ${({ scale }) => scale || 'auto'};
   }
 `;
 

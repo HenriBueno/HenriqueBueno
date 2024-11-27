@@ -2,12 +2,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background: rgb(16, 23, 40);
-  background: linear-gradient(
-    90deg,
-    rgba(16, 23, 40, 1) 25%,
-    rgba(11, 16, 27, 1) 48%,
-    rgba(16, 23, 40, 1) 66%
-  );
+  background: #020617;
+
   font-family: 'Times New Roman', Times, serif;
 }

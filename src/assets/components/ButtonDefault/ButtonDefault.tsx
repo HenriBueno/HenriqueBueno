@@ -1,36 +1,61 @@
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import { Box } from "@mui/material";
 
 interface ButtonDefaultProps {
   color?: string;
   text?: string;
+  icon?: React.ReactNode;
+  title?: string;
+  height: string;
+  width: string;
+  borderRadius?: string;
+  background?: string;
+  border?:string
 }
 
-export default function BasicButtons({ color, text }: ButtonDefaultProps) {
+export default function BasicButtons({
+  color,
+  text,
+  icon,
+  title,
+  height,
+  width,
+  borderRadius,
+  background,
+  border
+}: ButtonDefaultProps) {
   return (
     <Stack spacing={2} direction="row">
       <Button
         variant="contained"
+        title={title}
         sx={{
           color: color || "#390e61",
           fontWeight: "bold",
-          fontSize:"1.2em",
-          fontFamily:"arial",
-          background:
-            "linear-gradient(90deg, rgba(179,60,242,1) 14%, rgba(240,60,242,1) 33%, rgba(242,60,213,1) 52%, rgba(242,60,113,1) 66%)",
-          height:"50px",
-          width:"200px",
-          borderRadius:"30px",
+          fontSize: "1.2em",
+          fontFamily: "arial",
+          background:  background ,
+          height: { height },
+          width: { width },
+          borderRadius: { borderRadius },
           textTransform: "capitalize",
-          "&:hover":{
-              color:"white",
-              scale:"1.1",
-              transition: "0.5s",
-            },
-          
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "8px",
+          borderBottom: border,
+          "&:hover": {
+            color: "white",
+            scale: "1.1",
+            transition: "0.5s",
+          },
         }}
       >
-        {text}
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Box>{icon}</Box>
+          <Box>{text}</Box>
+        </Box>
       </Button>
     </Stack>
   );

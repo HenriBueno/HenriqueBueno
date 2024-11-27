@@ -1,15 +1,19 @@
 
 import useEmblaCarousel from 'embla-carousel-react';
 import CarrosselStyled from './CarrosselStyled'; // Importando o estilo
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 interface CarrosselProps {
   svgList: string[];
+  scale?: string;
+  slideTiming?: string
 }
 
 
-  const Carrossel: React.FC<CarrosselProps> = ({ svgList}) => {
+  const Carrossel: React.FC<CarrosselProps> = ({ svgList, scale, slideTiming}) => {
     const [emblaRef, emblaApi] = useEmblaCarousel();
+
+    const slideTimingValue = slideTiming ? parseInt(slideTiming, 10) : 10000;
   
     useEffect(() => {
       if (!emblaApi) return;
@@ -22,13 +26,13 @@ interface CarrosselProps {
         }
       };
   
-      const interval = setInterval(autoScroll, 10000); 
+      const interval = setInterval(autoScroll, slideTimingValue); 
   
       return () => clearInterval(interval); 
     }, [emblaApi]);
   
     return (
-      <CarrosselStyled >
+      <CarrosselStyled scale={scale}>
         <div className="embla" ref={emblaRef}>
           <div className="embla__container">
             {svgList.map((svgMarkup, index) => (
