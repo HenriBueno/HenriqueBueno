@@ -1,10 +1,11 @@
-import { Box, Container, Icon, Typography } from "@mui/material";
+import { Box, Container, Icon, Link, Typography } from "@mui/material";
 import DefaultLayout from "../config/layout/DefaultLayout";
 import Carrossel from "../components/Carrosel/Carrossel";
 import TextTypewriter from "../components/TextTypewriter/TextTypewriter";
 import ButtonDefault from "../components/ButtonDefault/ButtonDefault";
 import CardMain from "../components/CardMain/CardMain";
 import Icons from "../Icons/AllIcons";
+import { Email, GitHub, LinkedIn, WhatsApp } from "@mui/icons-material";
 
 function Home() {
   return (
@@ -69,6 +70,7 @@ function Home() {
             Acredito que o contínuo surgimento de novas tecnologias e abordagens
             torna este campo cada vez mais fascinante a cada dia.`}
             image="public/avatar.png"
+            background="white"
             imagePosition="left"
           />
         </Box>
@@ -105,7 +107,12 @@ function Home() {
             marginTop: "50px",
           }}
         >
-          <Box width="90%" display="flex" justifyContent="center" marginBottom="20px">
+          <Box
+            width="100%"
+            display="flex"
+            justifyContent="center"
+            marginBottom="20px"
+          >
             <Typography
               component="div"
               variant="h5"
@@ -119,11 +126,11 @@ function Home() {
           </Box>
           <Box
             sx={{
-              display: "flex",
-              justifyContent: "start",
-              width: "90%",
-              flexWrap: "wrap",
-              gap: "50px",
+              display: "grid",
+              justifyContent: "center",
+              width: "100%",
+              gridTemplateColumns: "repeat(5, 1fr)",
+              gap: "40px",
             }}
           >
             <Box>
@@ -152,9 +159,7 @@ function Home() {
                 background="#13131f"
                 border="solid 3px "
                 icon={
-                  <span
-                    dangerouslySetInnerHTML={{ __html: Icons.htmlIcon }}
-                  />
+                  <span dangerouslySetInnerHTML={{ __html: Icons.htmlIcon }} />
                 }
               />
             </Box>
@@ -167,11 +172,7 @@ function Home() {
                 borderRadius="30px 0px 0px 0px"
                 background="#13131f"
                 border="solid 3px "
-                icon={
-                  <span
-                    dangerouslySetInnerHTML={{ __html: Icons.CSS3 }}
-                  />
-                }
+                icon={<span dangerouslySetInnerHTML={{ __html: Icons.CSS3 }} />}
               />
             </Box>
             <Box>
@@ -183,11 +184,7 @@ function Home() {
                 borderRadius="30px 0px 0px 0px"
                 background="#13131f"
                 border="solid 3px "
-                icon={
-                  <span
-                    dangerouslySetInnerHTML={{ __html: Icons.Ts }}
-                  />
-                }
+                icon={<span dangerouslySetInnerHTML={{ __html: Icons.Ts }} />}
               />
             </Box>
             <Box>
@@ -199,11 +196,7 @@ function Home() {
                 borderRadius="30px 0px 0px 0px"
                 background="#13131f"
                 border="solid 3px "
-                icon={
-                  <span
-                    dangerouslySetInnerHTML={{ __html: Icons.Js }}
-                  />
-                }
+                icon={<span dangerouslySetInnerHTML={{ __html: Icons.Js }} />}
               />
             </Box>
             <Box>
@@ -215,11 +208,7 @@ function Home() {
                 borderRadius="30px 0px 0px 0px"
                 background="#13131f"
                 border="solid 3px "
-                icon={
-                  <span
-                    dangerouslySetInnerHTML={{ __html: Icons.Git }}
-                  />
-                }
+                icon={<span dangerouslySetInnerHTML={{ __html: Icons.Git }} />}
               />
             </Box>
             <Box>
@@ -231,11 +220,7 @@ function Home() {
                 borderRadius="30px 0px 0px 0px"
                 background="#13131f"
                 border="solid 3px "
-                icon={
-                  <span
-                    dangerouslySetInnerHTML={{ __html: Icons.Node }}
-                  />
-                }
+                icon={<span dangerouslySetInnerHTML={{ __html: Icons.Node }} />}
               />
             </Box>
             <Box>
@@ -247,11 +232,7 @@ function Home() {
                 borderRadius="30px 0px 0px 0px"
                 background="#13131f"
                 border="solid 3px "
-                icon={
-                  <span
-                    dangerouslySetInnerHTML={{ __html: Icons.Next }}
-                  />
-                }
+                icon={<span dangerouslySetInnerHTML={{ __html: Icons.Next }} />}
               />
             </Box>
             <Box>
@@ -264,9 +245,7 @@ function Home() {
                 background="#13131f"
                 border="solid 3px "
                 icon={
-                  <span
-                    dangerouslySetInnerHTML={{ __html: Icons.React }}
-                  />
+                  <span dangerouslySetInnerHTML={{ __html: Icons.React }} />
                 }
               />
             </Box>
@@ -280,9 +259,7 @@ function Home() {
                 background="#13131f"
                 border="solid 3px "
                 icon={
-                  <span
-                    dangerouslySetInnerHTML={{ __html: Icons.Redux }}
-                  />
+                  <span dangerouslySetInnerHTML={{ __html: Icons.Redux }} />
                 }
               />
             </Box>
@@ -295,11 +272,7 @@ function Home() {
                 borderRadius="30px 0px 0px 0px"
                 background="#13131f"
                 border="solid 3px "
-                icon={
-                  <span
-                    dangerouslySetInnerHTML={{ __html: Icons.SQL }}
-                  />
-                }
+                icon={<span dangerouslySetInnerHTML={{ __html: Icons.SQL }} />}
               />
             </Box>
             <Box>
@@ -312,11 +285,268 @@ function Home() {
                 background="#13131f"
                 border="solid 3px "
                 icon={
-                  <span
-                    dangerouslySetInnerHTML={{ __html: Icons.Bootstrap }}
-                  />
+                  <span dangerouslySetInnerHTML={{ __html: Icons.Bootstrap }} />
                 }
               />
+            </Box>
+          </Box>
+        </Box>
+        <Box sx={{
+          marginTop:'50px',
+          marginBottom:'50px'
+        }}>
+          <CardMain
+            title="Projetos"
+            content="Em desenvolvimento ..."
+            background="trasparent"
+            image={Icons.WorkingSvg}
+            imagePosition="left"
+          />
+        </Box>
+        <Box sx={{marginBottom:'100px'}}>
+          <Box
+            width="100%"
+            display="flex"
+            justifyContent="center"
+            marginBottom="20px"
+          >
+            <Typography
+              component="div"
+              width="100%"
+              variant="h5"
+              color="white"
+              fontSize="2em"
+              textAlign="center"
+              fontWeight={700}
+              mb={2}
+            >
+              Contatos
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              width: "100%",
+              justifyContent: "space-around",
+              marginTop:"50px"
+            }}
+          >
+            <Box
+              sx={{
+                width: "20%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                textAlign: "center",
+              }}
+            >
+              <Link
+                href="mailto:henriquetribueno.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                underline="none"
+                color="inherit"
+                sx={{
+                  "&:hover": {
+                    color: "white",
+                    scale: "1.1",
+                    transition: "0.5s",
+                  },
+                }}
+              >
+                <ButtonDefault
+                  height="100px"
+                  width="100px"
+                  color="#9340ff"
+                  borderRadius="50%"
+                  background="#13131f"
+                  icon={<Email sx={{ fontSize: "40px" }} />}
+                />
+                <Typography
+                  component="div"
+                  variant="h5"
+                  color="white"
+                  fontWeight={500}
+                  fontSize="1.2em"
+                  mt={2}
+                >
+                  E-mail
+                </Typography>
+                <Typography
+                  component="div"
+                  variant="h5"
+                  color="white"
+                  fontWeight={500}
+                  fontSize="1.2em"
+                  mt={2}
+                  sx={{ opacity: "0.5" }}
+                >
+                  henriquetribueno@gmail.com
+                </Typography>
+              </Link>
+            </Box>
+            <Box
+              sx={{
+                width: "20%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                textAlign: "center",
+              }}
+            >
+              <Link
+                href="https://wa.me/+555180374828?text=Olá%20Henrique!%20Vi%20seu%20portfólio.%20Vamos%20conversar?%20"
+                target="_blank"
+                rel="noopener noreferrer"
+                underline="none"
+                color="inherit"
+                sx={{
+                  "&:hover": {
+                    color: "white",
+                    scale: "1.1",
+                    transition: "0.5s",
+                  },
+                }}
+              >
+                <ButtonDefault
+                  height="100px"
+                  width="100px"
+                  color="#9340ff"
+                  borderRadius="50%"
+                  background="#13131f"
+                  icon={<WhatsApp sx={{ fontSize: "40px" }} />}
+                />
+                <Typography
+                  component="div"
+                  variant="h5"
+                  color="white"
+                  fontWeight={500}
+                  fontSize="1.2em"
+                  mt={2}
+                >
+                  WhatsApp
+                </Typography>
+                <Typography
+                  component="div"
+                  variant="h5"
+                  color="white"
+                  fontWeight={500}
+                  fontSize="1.2em"
+                  mt={2}
+                  sx={{ opacity: "0.5" }}
+                >
+                  +55 (51) 8037-4828
+                </Typography>
+              </Link>
+            </Box>
+            <Box
+              sx={{
+                width: "20%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                textAlign: "center",
+              }}
+            >
+              <Link
+                href="https://www.linkedin.com/in/henrique-cavalheiro-bueno-6802a7248/"
+                target="_blank"
+                rel="noopener noreferrer"
+                underline="none"
+                color="inherit"
+                sx={{
+                  "&:hover": {
+                    color: "white",
+                    scale: "1.1",
+                    transition: "0.5s",
+                  },
+                }}
+              >
+                <ButtonDefault
+                  height="100px"
+                  width="100px"
+                  color="#9340ff"
+                  borderRadius="50%"
+                  background="#13131f"
+                  icon={<LinkedIn sx={{ fontSize: "40px" }} />}
+                />
+                <Typography
+                  component="div"
+                  variant="h5"
+                  color="white"
+                  fontWeight={500}
+                  fontSize="1.2em"
+                  mt={2}
+                >
+                  LinkedIn
+                </Typography>
+                <Typography
+                  component="div"
+                  variant="h5"
+                  color="white"
+                  fontWeight={500}
+                  fontSize="1.2em"
+                  mt={2}
+                  sx={{ opacity: "0.5" }}
+                >
+                  Henrique Bueno
+                </Typography>
+              </Link>
+            </Box>
+            <Box
+              sx={{
+                width: "20%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                textAlign: "center",
+              }}
+            >
+              <Link
+                href="https://github.com/HenriBueno"
+                target="_blank"
+                rel="noopener noreferrer"
+                underline="none"
+                color="inherit"
+                sx={{
+                  "&:hover": {
+                    color: "white",
+                    scale: "1.1",
+                    transition: "0.5s",
+                  },
+                }}
+              >
+                <ButtonDefault
+                  height="100px"
+                  width="100px"
+                  color="#9340ff"
+                  borderRadius="50%"
+                  background="#13131f"
+                  icon={<GitHub sx={{ fontSize: "40px" }} />}
+                />
+                <Typography
+                  component="div"
+                  variant="h5"
+                  color="white"
+                  fontWeight={500}
+                  fontSize="1.2em"
+                  mt={2}
+                >
+                  Github
+                </Typography>
+                <Typography
+                  component="div"
+                  variant="h5"
+                  color="white"
+                  fontWeight={500}
+                  fontSize="1.2em"
+                  mt={2}
+                  sx={{ opacity: "0.5" }}
+                >
+                  @HenriBueno
+                </Typography>
+              </Link>
             </Box>
           </Box>
         </Box>

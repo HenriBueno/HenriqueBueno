@@ -9,8 +9,9 @@ interface CardMainProps {
   imagePosition?: "left" | "right";
   image?: string;
   title: string;
-  content: string;
+  content?: string;
   carrossel?: React.ReactNode;
+  background?: string;
 }
 
 export default function CardMain({
@@ -19,6 +20,7 @@ export default function CardMain({
   content,
   title,
   carrossel,
+  background
 }: CardMainProps) {
   const theme = useTheme();
 
@@ -49,7 +51,7 @@ export default function CardMain({
               maxHeight: "100%",
               maxWidth: "100%",
               objectFit: "contain",
-              backgroundColor: "white",
+              backgroundColor: background === 'transparent' ? 'transparent' : background,
               borderRadius: "30px",
               boxShadow: theme.shadows[5],
               transition: "transform 0.3s",
@@ -95,7 +97,7 @@ export default function CardMain({
             {title}
           </Typography>
 
-          {content.split("\n").map((line, index) => (
+          {content?.split("\n").map((line, index) => (
             <Typography
               key={index}
               variant="subtitle1"

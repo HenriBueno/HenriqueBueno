@@ -19,6 +19,9 @@ import SQL from "../Icons/PostSqlIcon.svg?raw";
 import React from "../Icons/ReactIcon.svg?raw";
 import Redux from "../Icons/HtmlIcon.svg?raw";
 import Ts from "../Icons/TsIcon.svg?raw";
+import Cubo3D from "../Icons/Cubo-Magico.gif"
+import WorkingSvg from "../Icons/Working.svg"
+
 
 const Icons = { 
     SVG1, 
@@ -42,6 +45,8 @@ const Icons = {
     React,
     Redux,
     Ts,
+    Cubo3D,
+    WorkingSvg
   };
   
   export default Icons;

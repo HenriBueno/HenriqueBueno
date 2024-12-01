@@ -11,7 +11,7 @@ interface ButtonDefaultProps {
   width: string;
   borderRadius?: string;
   background?: string;
-  border?:string
+  border?: string;
 }
 
 export default function BasicButtons({
@@ -23,10 +23,14 @@ export default function BasicButtons({
   width,
   borderRadius,
   background,
-  border
+  border,
 }: ButtonDefaultProps) {
   return (
-    <Stack spacing={2} direction="row">
+    <Stack
+      spacing={2}
+      direction="row"
+      sx={{ display: "flex", justifyContent: "center" }}
+    >
       <Button
         variant="contained"
         title={title}
@@ -35,7 +39,7 @@ export default function BasicButtons({
           fontWeight: "bold",
           fontSize: "1.2em",
           fontFamily: "arial",
-          background:  background ,
+          background: background,
           height: { height },
           width: { width },
           borderRadius: { borderRadius },
@@ -52,7 +56,16 @@ export default function BasicButtons({
           },
         }}
       >
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignContent: "center",
+            height: "100%",
+            width: "100%",
+          }}
+        >
           <Box>{icon}</Box>
           <Box>{text}</Box>
         </Box>
