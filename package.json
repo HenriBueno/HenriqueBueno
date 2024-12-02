@@ -23,9 +23,7 @@
     "react-dom": "^18.3.1",
     "react-font": "^1.2.1",
     "react-router-dom": "^6.27.0",
-    "styled-components": "^6.1.13",
-    "three": "^0.170.0",
-    "vanta": "^0.5.24"
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
