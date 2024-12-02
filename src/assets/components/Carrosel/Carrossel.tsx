@@ -1,7 +1,7 @@
 
 import useEmblaCarousel from 'embla-carousel-react';
-import CarrosselStyled from './CarrosselStyled'; // Importando o estilo
-import { useEffect, useState } from 'react';
+import CarrosselStyled from './CarrosselStyled';
+import { useEffect} from 'react';
 
 interface CarrosselProps {
   svgList: string[];
