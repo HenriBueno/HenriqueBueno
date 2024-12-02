@@ -21,6 +21,7 @@ import Redux from "../Icons/HtmlIcon.svg?raw";
 import Ts from "../Icons/TsIcon.svg?raw";
 import Cubo3D from "../Icons/Cubo-Magico.gif"
 import WorkingSvg from "../Icons/Working.svg"
+import HenriqueImage from "../Icons/avatar.png"
 
 
 const Icons = { 
@@ -46,7 +47,8 @@ const Icons = {
     Redux,
     Ts,
     Cubo3D,
-    WorkingSvg
+    WorkingSvg,
+    HenriqueImage
   };
   
   export default Icons;

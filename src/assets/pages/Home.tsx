@@ -86,7 +86,7 @@ function Home() {
             \n
             Acredito que o contínuo surgimento de novas tecnologias e abordagens
             torna este campo cada vez mais fascinante a cada dia.`}
-            image="public/avatar.png"
+            image={Icons.HenriqueImage}
             background="white"
             imagePosition="left"
           />
