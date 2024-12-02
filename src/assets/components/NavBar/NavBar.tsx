@@ -1,38 +1,49 @@
-import { Typography } from "@mui/material";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
+import { Grid2, Typography } from "@mui/material";
 
-interface NavBarProps{
-  text: string
+interface NavBarProps {
+  text: string;
 }
 
-function NavBar({text}: NavBarProps) {
+function NavBar({ text }: NavBarProps) {
   return (
-    <Container
-      maxWidth={false}
-      sx={{ display: "flex", alignItems: "center", width:'100%' }}
+    <Grid2
+      container
+      alignItems="center"
+      sx={{ width: "100%", padding: "10px" }}
     >
-      <Box>
+      <Grid2
+        size={{ xs: 6, sm: 2 }}
+        sx={{ textAlign: { xs: "center", sm: "start" } }}
+      >
         <img
           src="src/assets/Icons/Cubo-Magico.gif"
           alt="Logo"
-          style={{ height: "100px" }}
+          style={{
+            height: "80px",
+            maxHeight: "100px",
+          }}
         />
-      </Box>
+      </Grid2>
 
-      <Box>
+      <Grid2
+        size={{ xs: 6, sm: 10 }}
+        sx={{
+          textAlign: { xs: "center", sm: "start" },
+          marginTop: { xs: "10px", sm: "0px" },
+        }}
+      >
         <Typography
           sx={{
             fontFamily: "arial",
             fontWeight: "bold",
-            fontSize: "1.5rem",
+            fontSize: { xs: "1rem", sm: "1.5rem" },
             color: "#ffffff",
           }}
         >
           {text}
         </Typography>
-      </Box>
-    </Container>
+      </Grid2>
+    </Grid2>
   );
 }
 

@@ -12,6 +12,8 @@ interface ButtonDefaultProps {
   borderRadius?: string;
   background?: string;
   border?: string;
+  justify?: string;
+  onClick?: () => void;
 }
 
 export default function BasicButtons({
@@ -24,16 +26,25 @@ export default function BasicButtons({
   borderRadius,
   background,
   border,
+  justify,
+  onClick,
 }: ButtonDefaultProps) {
   return (
     <Stack
       spacing={2}
       direction="row"
-      sx={{ display: "flex", justifyContent: "center" }}
+      sx={{
+        display: "flex",
+        justifyContent: {
+          xs: justify === "center" ? "start" : "center",
+          md: justify === "start" ? "start" : "center",
+        },
+      }}
     >
       <Button
         variant="contained"
         title={title}
+        onClick={onClick}
         sx={{
           color: color || "#390e61",
           fontWeight: "bold",

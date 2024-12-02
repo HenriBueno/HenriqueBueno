@@ -1,9 +1,9 @@
 import { useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import { Grid2 } from "@mui/material";
 
 interface CardMainProps {
   imagePosition?: "left" | "right";
@@ -20,7 +20,7 @@ export default function CardMain({
   content,
   title,
   carrossel,
-  background
+  background,
 }: CardMainProps) {
   const theme = useTheme();
 
@@ -28,87 +28,91 @@ export default function CardMain({
     <Card
       sx={{
         display: "flex",
-        flexDirection: imagePosition === "right" ? "row-reverse" : "row",
-        height: "50vh",
+        flexDirection: "column",
+        height: "auto",
         backgroundColor: "transparent",
-        alignItems: "center",
-        justifyContent: "space-between",
         padding: "20px",
       }}
     >
-      {image ? (
-        <Box
-          sx={{
-            width: "30%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <CardMedia
-            component="img"
-            sx={{
-              maxHeight: "100%",
-              maxWidth: "100%",
-              objectFit: "contain",
-              backgroundColor: background === 'transparent' ? 'transparent' : background,
-              borderRadius: "30px",
-              boxShadow: theme.shadows[5],
-              transition: "transform 0.3s",
-            }}
-            image={image}
-          />
-        </Box>
-      ) : (
-        <Box
-          sx={{
-            width: "30%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          {carrossel}
-        </Box>
-      )}
-
-      <Box
+      <Grid2
+        container
+        spacing={2}
         sx={{
-          width: "60%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          textAlign: "start",
+          flexDirection: {
+            xs: "column",
+            md: imagePosition === "right" ? "row-reverse" : "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            height: "100%",
+            width: "100%",
+          },
         }}
       >
-        <CardContent
+        <Grid2
+          size={{ xs: 12, md: 4 }}
           sx={{
-            flex: "1 0 auto",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <Typography
-            component="div"
-            variant="h5"
-            color="#9340ff"
-            fontSize="2em"
-            fontWeight={700}
-            mb={2}
-          >
-            {title}
-          </Typography>
+          {image ? (
+            <CardMedia
+              component="img"
+              sx={{
+                maxHeight: "80%",
+                maxWidth: "80%",
+                objectFit: "contain",
+                backgroundColor:
+                  background === "transparent" ? "transparent" : background,
+                borderRadius: "30px",
+                boxShadow: theme.shadows[5],
+                transition: "transform 0.3s",
+              }}
+              image={image}
+            />
+          ) : (
+            carrossel
+          )}
+        </Grid2>
 
-          {content?.split("\n").map((line, index) => (
+        <Grid2
+          size={{ xs: 12, md: 8 }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <CardContent
+            sx={{
+              textAlign: { xs: "center", md: "start" },
+            }}
+          >
             <Typography
-              key={index}
-              variant="subtitle1"
               component="div"
-              sx={{ color: "white", fontSize: "1.2em" }}
+              variant="h5"
+              color="#9340ff"
+              fontSize={{ xs: "1.5em", md: "2em" }}
+              fontWeight={700}
+              mb={2}
             >
-              {line}
+              {title}
             </Typography>
-          ))}
-        </CardContent>
-      </Box>
+
+            {content?.split("\n").map((line, index) => (
+              <Typography
+                key={index}
+                variant="subtitle1"
+                component="div"
+                sx={{ color: "white", fontSize: { xs: "1em", md: "1.2em" } }}
+              >
+                {line}
+              </Typography>
+            ))}
+          </CardContent>
+        </Grid2>
+      </Grid2>
     </Card>
   );
 }
