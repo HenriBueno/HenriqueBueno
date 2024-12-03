@@ -1,9 +1,10 @@
 import NavBar from "../../components/NavBar/NavBar";
+import Icons from "../../Icons/AllIcons";
 
 function DefaultLayout() {
   return (
     <>
-      <NavBar text="Henrique Bueno"/>
+      <NavBar svg= {Icons.Cubo3D} text="Henrique Bueno"/>
  
     </>
   );
