@@ -166,6 +166,7 @@ function Home() {
                     borderRadius="30px 0px 0px 0px"
                     background="#13131f"
                     border="solid 3px"
+                    cursor="auto"
                     icon={<span dangerouslySetInnerHTML={{ __html: icon }} />}
                   />
                 </Box>

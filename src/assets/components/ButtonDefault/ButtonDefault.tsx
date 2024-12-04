@@ -14,6 +14,7 @@ interface ButtonDefaultProps {
   border?: string;
   justify?: string;
   onClick?: () => void;
+  cursor?: string;
 }
 
 export default function BasicButtons({
@@ -28,6 +29,7 @@ export default function BasicButtons({
   border,
   justify,
   onClick,
+  cursor
 }: ButtonDefaultProps) {
   return (
     <Stack
@@ -60,6 +62,7 @@ export default function BasicButtons({
           justifyContent: "center",
           gap: "8px",
           borderBottom: border,
+          cursor: cursor || "pointer",
           "&:hover": {
             color: "white",
             scale: "1.1",
